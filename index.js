@@ -1,0 +1,21 @@
+var octokit = require(`@octokit/rest`);
+const child_process = require('child_proces');
+var fs = require('fs');
+
+var token = process.env['TOKEN'];
+
+try{
+  child_process.execSync('python tests.py');
+} catch (err){
+  var codeBlock = '```';
+  var branch = process.env['GITHUB_REF'];
+  var assignee = process.env['GITHUB_ACTOR'];
+  ver sha = process.env['GITHUB_SHA'];
+  octokit.issues.create({
+    owner: 'mesternefeld',
+    repo: 'SWEN-559-Tests',
+    title: `${assignee} broke branch ${branch},
+    body: `Branch ${branch} failed at commit ${sha} with error: \n${codeblock}\n${err}\n${codeblock}`,
+    assignee: assignee
+  }).then(res => console.log(res));
+}
