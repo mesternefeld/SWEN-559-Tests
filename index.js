@@ -1,5 +1,5 @@
 var octokit = require(`@octokit/rest`);
-const child_process = require('child_proces');
+const child_process = require('child_process');
 var fs = require('fs');
 
 var token = process.env['TOKEN'];
