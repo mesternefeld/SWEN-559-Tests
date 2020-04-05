@@ -10,6 +10,7 @@ try{
   console.log("got here");
   child_process.execSync('python tests.py');
 } catch (err){
+  console.log("token");
   console.log(token);
   var codeBlock = '```';
   var branch = process.env['GITHUB_REF'];
