@@ -14,7 +14,7 @@ try{
   octokit.issues.create({
     owner: 'mesternefeld',
     repo: 'SWEN-559-Tests',
-    title: `${assignee} broke branch ${branch},
+    title: `${assignee} broke branch ${branch}`,
     body: `Branch ${branch} failed at commit ${sha} with error: \n${codeblock}\n${err}\n${codeblock}`,
     assignee: assignee
   }).then(res => console.log(res));
