@@ -1,9 +1,10 @@
 {
-  "name": "@octokit/rest",
+  "name": "SWEN-559-Tests",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@octokit/rest": "^17.1.4",
     "child_process": "^1.0.2"
   },
   "devDependencies": {},
