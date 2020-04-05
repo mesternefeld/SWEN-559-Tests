@@ -29,7 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install requests
         npm install
-    - name: check if build is broken
+    - name: check if build is broken through node
       run: |
         node index.js
       env:
