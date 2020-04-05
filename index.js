@@ -5,8 +5,10 @@ var fs = require('fs');
 var token = process.env['TOKEN'];
 
 try{
+  console.log("got here");
   child_process.execSync('python tests.py');
 } catch (err){
+  console.log("caught");
   var codeBlock = '```';
   var branch = process.env['GITHUB_REF'];
   var assignee = process.env['GITHUB_ACTOR'];
