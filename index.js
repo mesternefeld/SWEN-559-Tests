@@ -10,7 +10,7 @@ try{
   var codeBlock = '```';
   var branch = process.env['GITHUB_REF'];
   var assignee = process.env['GITHUB_ACTOR'];
-  ver sha = process.env['GITHUB_SHA'];
+  var sha = process.env['GITHUB_SHA'];
   octokit.issues.create({
     owner: 'mesternefeld',
     repo: 'SWEN-559-Tests',
