@@ -1,4 +1,4 @@
-var octokit = require("@octokit/rest");
+const { octokit } = require("@octokit/rest");
 const child_process = require('child_process');
 var fs = require('fs');
 
