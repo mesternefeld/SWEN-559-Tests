@@ -27,6 +27,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install requests
-    - name: Test Application
+        npm install
+    - name: check if build is broken
       run: |
-        python tests.py
+        node index.js
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
