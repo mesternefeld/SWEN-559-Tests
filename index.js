@@ -1,17 +1,13 @@
 const { Octokit }  = require('@octokit/rest');
 const child_process = require('child_process');
-var fs = require('fs');
 
 var token = process.env['TOKEN'];
 
 const octokit = new Octokit({auth: token});
 
 try{
-  console.log("got here");
   child_process.execSync('python tests.py');
 } catch (err){
-  console.log("token");
-  console.log(token);
   var codeBlock = '```';
   var branch = process.env['GITHUB_REF'];
   var assignee = process.env['GITHUB_ACTOR'];
@@ -23,4 +19,6 @@ try{
     body: `Branch ${branch} failed at commit ${sha} with error: \n${codeBlock}\n${err}\n${codeBlock}`,
     assignee: assignee
   }).catch(err => console.log(err)).then(res => console.log(res));
+  
+  throw new Error("An issue has been created, there was an error in the python code");
 }
