@@ -19,6 +19,4 @@ try{
     body: `Branch ${branch} failed at commit ${sha} with error: \n${codeBlock}\n${err}\n${codeBlock}`,
     assignee: assignee
   }).catch(err => console.log(err)).then(res => console.log(res));
-  
-  //throw new Error("An issue has been created, there was an error in the python code");
 }
