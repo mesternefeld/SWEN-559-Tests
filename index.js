@@ -21,5 +21,5 @@ try{
     title: `${assignee} broke branch ${branch}`,
     body: `Branch ${branch} failed at commit ${sha} with error: \n${codeBlock}\n${err}\n${codeBlock}`,
     assignee: assignee
-  }).then(res => console.log(res));
+  }).catch(err => console.log(err)).then(res => console.log(res));
 }
