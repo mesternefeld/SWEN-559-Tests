@@ -26,8 +26,6 @@ jobs:
 
     - name: Install both dependencies 
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install requests
         npm install
     - name: check if build is broken through node
       run: |
