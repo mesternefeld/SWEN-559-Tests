@@ -15,8 +15,6 @@ try{
   var branch = process.env['GITHUB_REF'];
   var assignee = process.env['GITHUB_ACTOR'];
   var sha = process.env['GITHUB_SHA'];
-  console.log("octo");
-  console.log(octokit);
   octokit.issues.create({
     owner: 'mesternefeld',
     repo: 'SWEN-559-Tests',
