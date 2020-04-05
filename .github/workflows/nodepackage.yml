@@ -28,4 +28,4 @@ jobs:
       run: |
         node index.js
       env:
-        TOKEN: ${{ secrets.TOKEN }}
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
